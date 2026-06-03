@@ -35,6 +35,16 @@ function elementName(element) {
   }[element] || "复合主题";
 }
 
+function elementInstruction(element) {
+  return {
+    fire: "先看行动是不是太急或太散，再把下一步缩小到能立刻验证的范围。",
+    water: "先承认情绪和需求的存在，再判断哪些感受需要表达，哪些需要自己安放。",
+    air: "先把事实、猜测和担心分开，再决定要问什么、说什么、暂停什么。",
+    earth: "先看资源、时间和身体承受力，再把计划落到稳定、可重复的安排上。",
+    spirit: "先把它当作一个阶段课题，而不是单次事件，再观察这个主题反复出现在哪里。"
+  }[element] || "先把问题拆成更小的层次，再从最能验证的一层开始。";
+}
+
 export function interpretCard(item, topic) {
   const meaning = item.card[item.orientation];
   const topicLine = topicMeaning(meaning, topic.id);
@@ -47,7 +57,7 @@ export function interpretCard(item, topic) {
     orientation: item.orientation,
     orientationLabel: orientationLabel(item.orientation),
     keywords,
-    text: `在「${item.position.label}」位置，${item.card.nameCn}${orientationLabel(item.orientation)}指向「${keywords.join("、")}」。${item.position.prompt} 结合「${topic.name}」来看，${topicLine}`,
+    text: `「${item.position.label}」位置出现${item.card.nameCn}${orientationLabel(item.orientation)}，这张牌把注意力带向「${keywords.join("、")}」。${item.position.prompt} 放到「${topic.name}」里看，${topicLine}`,
     advice: meaning.advice,
     warning: meaning.warning,
     reflectionQuestions: meaning.reflectionQuestions
@@ -76,6 +86,15 @@ export function interpretReading(reading) {
         : "少量逆位提示局面中存在需要校准的部分。";
 
   const narrative = `${mainTheme} ${reversedTheme} 从牌阵结构看，重点不是得到一个绝对答案，而是看见你可以如何把问题拆小、看清并行动。`;
+  const elementFocus = `${elementName(mainElement)}是这次牌阵最明显的入口。${elementInstruction(mainElement)}`;
+  const orientationPattern =
+    reversedCount === 0
+      ? "正位牌较多，说明你可以先顺着已经出现的资源推进；但不要把顺畅误认为不需要选择，仍要把提醒落到具体行动里。"
+      : reversedCount >= Math.ceil(reading.drawn.length / 2)
+        ? "逆位牌占比偏高，重点不是否定结果，而是提示你先修正节奏、边界或理解方式，再进入下一步。"
+        : "正位与逆位同时出现，说明局面里既有可以推进的部分，也有需要放慢和校准的部分；先分清这两类信息，会比急着下结论更有帮助。";
+  const depthNote =
+    "本地解读说明：这份结果不依赖外部 API，而是根据牌义、牌位、主题、元素分布和正逆位结构组合生成。你可以把它当作一次整理问题的镜子，而不是替你决定未来的结论。";
 
   const actions = [
     firstAdvice,
@@ -92,7 +111,10 @@ export function interpretReading(reading) {
     headline: `${reading.spread.name} · ${reading.topic.shortName}`,
     oneLine: narrative,
     cardInterpretations,
-    synthesis: `如果把这些牌连成一条线，它们更像是在说：先承认${elementName(mainElement)}正在占主导，再用具体行动检验你的理解。${mainElementCount > 1 ? "重复出现的元素说明这个主题不是偶然，而是当前最值得处理的层面。" : "即使只有一张牌，它也足够成为今天的观察入口。"}`,
+    synthesis: `把这些牌连成一条线，它们像是在说：先承认${elementName(mainElement)}正在占主导，再用具体行动检验你的理解。${mainElementCount > 1 ? "重复出现的元素说明这个主题不是偶然，而是当前最值得处理的层面。" : "即使只有一张牌，它也足够成为今天的观察入口。"}`,
+    elementFocus,
+    orientationPattern,
+    depthNote,
     actions,
     questions
   };

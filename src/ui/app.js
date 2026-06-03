@@ -1,14 +1,54 @@
 import { API_PROVIDERS, DEFAULT_SYSTEM_PROMPT, getProvider } from "../data/apiProviders.js";
-import { SPREADS, getSpread } from "../data/spreads.js?v=20260603-polish2";
+import { SPREADS, getSpread } from "../data/spreads.js?v=20260603-ritual1";
 import { TOPICS } from "../data/topics.js";
 import { clearApiConfig, loadApiConfig, requestAiReading, saveApiConfig } from "../engine/aiClient.js";
 import { formatReadingForShare, interpretReading } from "../engine/interpret.js";
 import { secureRandomInt } from "../engine/random.js";
 import { createReading, toPublicRecord } from "../engine/tarotEngine.js";
-import { ANIMAL_GALLERY } from "../data/animals.js?v=20260603-polish2";
+import { ANIMAL_GALLERY } from "../data/animals.js?v=20260603-ritual1";
 import { getCardVisual } from "../data/cardVisuals.js";
 
 const READING_LOG_KEY = "astral-veil-reading-log";
+const SHUFFLE_DURATION_MS = 1500;
+const DEAL_BASE_MS = 980;
+const DEAL_STAGGER_MS = 260;
+const FLIP_PREP_MS = 260;
+const FLIP_RESULT_DELAY_MS = 1180;
+const PIPI_GREETING_MS = 5000;
+const PIPI_RUN_MS = 5200;
+
+const TOPIC_THEMES = {
+  daily: {
+    label: "晨星",
+    oracle: "今日指引会把答案收束成一个可执行的小动作。",
+    shuffle: "晨星光沿着牌背慢慢亮起。"
+  },
+  love: {
+    label: "玫瑰雾",
+    oracle: "感情关系会先照见真实感受，再照见边界和沟通。",
+    shuffle: "玫瑰色的雾会在牌桌上轻轻合拢。"
+  },
+  career: {
+    label: "蓝焰",
+    oracle: "事业工作会把机会、协作和下一步行动拆开来看。",
+    shuffle: "蓝焰沿着牌边游走，像一次安静的校准。"
+  },
+  money: {
+    label: "绿金",
+    oracle: "金钱资源会看见安全感、取舍和长期稳定的线索。",
+    shuffle: "绿金色的光会像硬币一样一层层沉入牌桌。"
+  },
+  self: {
+    label: "紫月",
+    oracle: "自我成长会把内在模式和修复方向慢慢显影。",
+    shuffle: "紫月的影子会先落下，再把牌面托起来。"
+  },
+  choice: {
+    label: "银线",
+    oracle: "重大选择会把动机、代价、盲点和低风险试探分开。",
+    shuffle: "银色线条会把两个方向短暂连成一张星图。"
+  }
+};
 
 const state = {
   topicId: "daily",
@@ -33,6 +73,7 @@ const els = {
   topicOptions: document.querySelector("#topicOptions"),
   spreadOptions: document.querySelector("#spreadOptions"),
   questionInput: document.querySelector("#questionInput"),
+  topicOracle: document.querySelector("#topicOracle"),
   shuffleButton: document.querySelector("#shuffleButton"),
   resetButton: document.querySelector("#resetButton"),
   deckStack: document.querySelector("#deckStack"),
@@ -97,14 +138,31 @@ function playTone(kind) {
   oscillator.stop(context.currentTime + 0.42);
 }
 
+function currentTopicTheme() {
+  return TOPIC_THEMES[state.topicId] || TOPIC_THEMES.daily;
+}
+
+function applyTopicTheme() {
+  const theme = currentTopicTheme();
+  document.body.dataset.topic = state.topicId;
+  if (els.topicOracle) {
+    els.topicOracle.textContent = theme.oracle;
+  }
+}
+
 function renderTopics() {
   els.topicOptions.innerHTML = TOPICS.map(
-    (topic) => `
+    (topic) => {
+      const theme = TOPIC_THEMES[topic.id] || TOPIC_THEMES.daily;
+      return `
       <button class="segment-button ${topic.id === state.topicId ? "is-selected" : ""}" type="button" data-topic="${topic.id}">
-        ${escapeHtml(topic.name)}
+        <span class="segment-name">${escapeHtml(topic.name)}</span>
+        <small>${escapeHtml(theme.label)}</small>
       </button>
-    `
+    `;
+    }
   ).join("");
+  applyTopicTheme();
 }
 
 function renderSpreads() {
@@ -125,6 +183,21 @@ function cardBackHtml() {
   return `
     <div class="card-face card-back">
       <img src="./assets/cards/tarot-back.webp" alt="" />
+    </div>
+  `;
+}
+
+function flipRitualLayerHtml() {
+  return `
+    <div class="flip-ritual-layer" aria-hidden="true">
+      <span class="flip-veil"></span>
+      <span class="flip-orbit orbit-a"></span>
+      <span class="flip-orbit orbit-b"></span>
+      <span class="flip-rune rune-north"></span>
+      <span class="flip-rune rune-east"></span>
+      <span class="flip-rune rune-south"></span>
+      <span class="flip-rune rune-west"></span>
+      <span class="flip-glint"></span>
     </div>
   `;
 }
@@ -253,8 +326,9 @@ function renderSpreadBoard() {
       const caption = state.reading ? `${item.card.nameCn} · ${orientationText}` : "";
       return `
         <div class="draw-card ${state.dealing ? "is-dealing-in" : ""}" style="--deal-index:${index}">
-          <button class="card-button ${isFlipped ? "is-flipped" : ""}" type="button" data-card-index="${index}" ${state.reading && !state.dealing ? "" : "disabled"} aria-label="${escapeHtml(label)}">
+          <button class="card-button orientation-${escapeHtml(state.reading ? item.orientation : "pending")} ${isFlipped ? "is-flipped" : ""}" type="button" data-card-index="${index}" ${state.reading && !state.dealing ? "" : "disabled"} aria-label="${escapeHtml(label)}">
             <div class="card-shell">
+              ${flipRitualLayerHtml()}
               ${cardBackHtml()}
               ${state.reading ? cardFrontHtml(item) : ""}
             </div>
@@ -296,15 +370,22 @@ function renderResult() {
   const apiConfig = loadApiConfig();
   if (!reading || !interpretation) {
     els.resultArea.classList.remove("is-visible");
+    els.resultArea.removeAttribute("data-topic");
     els.resultArea.innerHTML = "";
     return;
   }
 
   els.resultArea.classList.add("is-visible");
+  els.resultArea.dataset.topic = reading.topic.id;
   els.resultArea.innerHTML = `
     <div class="result-head">
       <div>
         <h2>${escapeHtml(interpretation.headline)}</h2>
+        <div class="result-meta" aria-label="本次解读概览">
+          <span>${escapeHtml(reading.topic.name)}</span>
+          <span>${reading.drawn.length} 张牌</span>
+          <span>${reading.drawn.filter((item) => item.orientation === "reversed").length} 张逆位</span>
+        </div>
         <p class="summary-line">${escapeHtml(interpretation.oneLine)}</p>
       </div>
       <div class="result-actions">
@@ -322,26 +403,47 @@ function renderResult() {
       ${interpretation.cardInterpretations
         .map(
           (item) => `
-          <article class="reading-item">
+          <article class="reading-item orientation-${escapeHtml(item.orientation)}">
+            <span class="reading-rune" aria-hidden="true"></span>
             <h3>
               <span>${escapeHtml(item.positionLabel)}</span>
               <span>${escapeHtml(item.cardName)} · ${escapeHtml(item.orientationLabel)}</span>
             </h3>
             <div class="keywords">${item.keywords.map((keyword) => `<span>${escapeHtml(keyword)}</span>`).join("")}</div>
             <p>${escapeHtml(item.text)}</p>
-            <p><strong>行动：</strong>${escapeHtml(item.advice)}</p>
+            <p class="card-warning"><strong>温柔提醒</strong>${escapeHtml(item.warning)}</p>
+            <div class="reflection-list" aria-label="Thinking 就好">
+              <strong class="reflection-heading">Thinking 就好</strong>
+              ${item.reflectionQuestions
+                .slice(0, 2)
+                .map((question) => `<span>${escapeHtml(question)}</span>`)
+                .join("")}
+            </div>
+            <p class="card-advice"><strong>可执行动作</strong>${escapeHtml(item.advice)}</p>
           </article>
         `
         )
         .join("")}
     </div>
     <div class="synthesis">
-      <h3>整盘综合</h3>
-      <p>${escapeHtml(interpretation.synthesis)}</p>
-      <h3>可以尝试的行动</h3>
-      <ol class="action-list">${interpretation.actions.map((action) => `<li>${escapeHtml(action)}</li>`).join("")}</ol>
-      <h3>反思问题</h3>
-      <ol class="question-list">${interpretation.questions.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ol>
+      <section class="synthesis-block type-synthesis">
+        <h3>整盘综合</h3>
+        <p>${escapeHtml(interpretation.synthesis)}</p>
+        <p>${escapeHtml(interpretation.elementFocus)}</p>
+        <p>${escapeHtml(interpretation.orientationPattern)}</p>
+      </section>
+      <section class="synthesis-block type-actions">
+        <h3>可以尝试的行动</h3>
+        <ol class="action-list">${interpretation.actions.map((action) => `<li>${escapeHtml(action)}</li>`).join("")}</ol>
+      </section>
+      <section class="synthesis-block type-questions">
+        <h3>Thinking 就好</h3>
+        <ol class="question-list">${interpretation.questions.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ol>
+      </section>
+      <section class="synthesis-block type-local">
+        <h3>本地解读说明</h3>
+        <p>${escapeHtml(interpretation.depthNote)}</p>
+      </section>
       <div id="aiResultSlot"></div>
     </div>
   `;
@@ -482,7 +584,10 @@ function performShuffle() {
   state.flipped.clear();
   state.dealing = true;
   renderSpreadBoard();
-  els.stageStatus.textContent = "正在洗牌";
+  const theme = currentTopicTheme();
+  els.stageStatus.textContent = `正在洗牌：${theme.shuffle}`;
+  els.deckStack.classList.remove("is-shuffling");
+  void els.deckStack.offsetWidth;
   els.deckStack.classList.add("is-shuffling");
   playTone("shuffle");
 
@@ -493,23 +598,23 @@ function performShuffle() {
         spreadId: state.spreadId,
         question: els.questionInput.value
       });
-      els.stageStatus.textContent = `正在抽出 ${state.reading.drawn.length} 张牌。`;
+      els.stageStatus.textContent = `正在抽出 ${state.reading.drawn.length} 张牌，请等它们依次落位。`;
       updateDrawRecord();
       renderSpreadBoard();
       els.deckStack.classList.remove("is-shuffling");
       window.setTimeout(() => {
         state.dealing = false;
         els.shuffleButton.disabled = false;
-        els.stageStatus.textContent = "牌已落位。请逐张点击牌背翻开。";
+        els.stageStatus.textContent = "牌已缓慢落位。请逐张点击牌背，让牌面自己翻开。";
         renderSpreadBoard();
-      }, 620 + state.reading.drawn.length * 150);
+      }, DEAL_BASE_MS + state.reading.drawn.length * DEAL_STAGGER_MS);
     } catch (error) {
       els.stageStatus.textContent = error.message;
       state.dealing = false;
       els.deckStack.classList.remove("is-shuffling");
       els.shuffleButton.disabled = false;
     }
-  }, 1080);
+  }, SHUFFLE_DURATION_MS);
 }
 
 function resetReading() {
@@ -519,7 +624,7 @@ function resetReading() {
   state.dealing = false;
   setResultCueVisible(false);
   els.questionInput.value = "";
-  els.stageStatus.textContent = "选择主题和牌阵后开始洗牌。";
+  els.stageStatus.textContent = "选择主题和牌阵后开始洗牌，牌会依次落位。";
   updateDrawRecord();
   renderSpreadBoard();
   renderResult();
@@ -622,6 +727,7 @@ function runPipiLap() {
   window.clearTimeout(state.ravenClickTimer);
   window.clearTimeout(state.pipiClickTimer);
   clearAnimalGuardian();
+  const previousStatus = els.stageStatus.textContent || "选择主题和牌阵后开始洗牌，牌会依次落位。";
 
   const runner = document.createElement("div");
   runner.className = "pipi-runner";
@@ -633,14 +739,17 @@ function runPipiLap() {
     <span class="pipi-trail three"></span>
   `;
   document.body.appendChild(runner);
-  els.stageStatus.textContent = "隐藏彩蛋：皮皮出来绕场一圈。";
+  els.stageStatus.textContent = "皮皮向你问好";
+
+  window.setTimeout(() => {
+    els.stageStatus.textContent = previousStatus;
+  }, PIPI_GREETING_MS);
 
   window.setTimeout(() => {
     runner.remove();
     restoreRavenButton();
     state.pipiRunning = false;
-    els.stageStatus.textContent = "皮皮跑完一圈，渡鸦回来了。";
-  }, 5200);
+  }, PIPI_RUN_MS);
 }
 
 function handleRavenClick() {
@@ -682,6 +791,9 @@ function bindEvents() {
     }
     state.topicId = button.dataset.topic;
     renderTopics();
+    if (!state.reading) {
+      els.stageStatus.textContent = currentTopicTheme().oracle;
+    }
   });
 
   els.spreadOptions.addEventListener("click", (event) => {
@@ -711,10 +823,19 @@ function bindEvents() {
       return;
     }
     state.flipped.add(index);
-    button.classList.add("is-flipped");
-    button.closest(".draw-card")?.querySelector(".revealed-card-caption")?.classList.add("is-visible");
-    playTone("flip");
-    window.setTimeout(revealResultIfReady, 420);
+    const drawCard = button.closest(".draw-card");
+    drawCard?.classList.add("is-revealing-card");
+    button.classList.add("is-revealing");
+    window.setTimeout(() => {
+      button.classList.add("is-flipped");
+      playTone("flip");
+    }, FLIP_PREP_MS);
+    window.setTimeout(() => {
+      button.classList.remove("is-revealing");
+      drawCard?.classList.remove("is-revealing-card");
+      button.closest(".draw-card")?.querySelector(".revealed-card-caption")?.classList.add("is-visible");
+      revealResultIfReady();
+    }, FLIP_RESULT_DELAY_MS);
   });
 
   els.shuffleButton.addEventListener("click", performShuffle);

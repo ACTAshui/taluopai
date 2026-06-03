@@ -149,7 +149,7 @@ test("shuffle animation and button flow only run one ritual at a time", () => {
   const styles = readFileSync(join(process.cwd(), "styles.css"), "utf8");
   const performShuffle = app.match(/function performShuffle\(\) \{[\s\S]*?\n\}/)?.[0] || "";
 
-  assert.equal(app.includes('els.stageStatus.textContent = "正在洗牌";'), true);
+  assert.equal(app.includes("正在洗牌："), true);
   assert.equal(app.includes("牌面与正逆位将由 Web Crypto 独立生成"), false);
   assert.equal(/animation:\s*shuffle(?:Pulse|Top|Middle|Bottom)[^;]*\s2\s*;/.test(styles), false);
   assert.equal(/function performShuffle\(\) \{\s*if \(state\.dealing\)/.test(app), true);
@@ -168,6 +168,78 @@ test("completed reading shows a mystical downward result cue once", () => {
   assert.equal(styles.includes("@keyframes resultCueDrift"), true);
 }
 );
+
+test("topic choice drives page atmosphere and ritual copy", () => {
+  const index = readFileSync(join(process.cwd(), "index.html"), "utf8");
+  const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
+  const styles = readFileSync(join(process.cwd(), "styles.css"), "utf8");
+
+  assert.equal(index.includes('id="topicOracle"'), true);
+  assert.equal(app.includes("TOPIC_THEMES"), true);
+  assert.equal(app.includes("function applyTopicTheme"), true);
+  assert.equal(app.includes("document.body.dataset.topic = state.topicId"), true);
+  assert.equal(styles.includes('body[data-topic="love"]'), true);
+  assert.equal(styles.includes('body[data-topic="money"]'), true);
+  assert.equal(styles.includes(".table-stage::before"), true);
+});
+
+test("dealing and flipping use slower staged ritual motion", () => {
+  const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
+  const styles = readFileSync(join(process.cwd(), "styles.css"), "utf8");
+
+  assert.equal(app.includes("const SHUFFLE_DURATION_MS = 1500"), true);
+  assert.equal(app.includes("const DEAL_STAGGER_MS = 260"), true);
+  assert.equal(app.includes("const FLIP_RESULT_DELAY_MS = 1180"), true);
+  assert.equal(app.includes('button.classList.add("is-revealing")'), true);
+  assert.equal(styles.includes("animation: dealFromDeck 920ms"), true);
+  assert.equal(styles.includes("animation-delay: calc(var(--deal-index) * 260ms)"), true);
+  assert.equal(styles.includes(".card-button.is-revealing .card-shell"), true);
+  assert.equal(styles.includes("@keyframes flipSigilBloom"), true);
+  assert.equal(styles.includes(".reading-item.orientation-reversed"), true);
+});
+
+test("flip interface has a richer ritual layer", () => {
+  const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
+  const styles = readFileSync(join(process.cwd(), "styles.css"), "utf8");
+
+  assert.equal(app.includes('class="flip-ritual-layer"'), true);
+  assert.equal(app.includes('class="flip-rune rune-north"'), true);
+  assert.equal(app.includes('drawCard?.classList.add("is-revealing-card")'), true);
+  assert.equal(styles.includes(".flip-ritual-layer"), true);
+  assert.equal(styles.includes(".draw-card.is-revealing-card::before"), true);
+  assert.equal(styles.includes(".card-button.is-revealing .flip-ritual-layer"), true);
+  assert.equal(styles.includes("@keyframes flipRuneOrbit"), true);
+  assert.equal(styles.includes("@keyframes flipVeilOpen"), true);
+  assert.equal(styles.includes(".card-button.orientation-reversed.is-revealing .flip-rune"), true);
+});
+
+test("Pipi greeting is temporary and does not reveal hidden-easter-egg copy", () => {
+  const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
+
+  assert.equal(app.includes("const PIPI_GREETING_MS = 5000"), true);
+  assert.equal(app.includes('"皮皮向你问好"'), true);
+  assert.equal(app.includes("隐藏彩蛋：皮皮出来绕场一圈。"), false);
+  assert.equal(app.includes("皮皮跑完一圈，渡鸦回来了。"), false);
+});
+
+test("local-only result has enough depth without API", () => {
+  const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
+  const reading = createReading({
+    topicId: "self",
+    spreadId: "relationship",
+    rng: fakeRng(Array.from({ length: 180 }, (_, index) => index * 31 + 9))
+  });
+  const interpretation = interpretReading(reading);
+
+  assert.ok(interpretation.depthNote.length > 40);
+  assert.ok(interpretation.orientationPattern.length > 40);
+  assert.ok(interpretation.elementFocus.length > 40);
+  assert.ok(interpretation.cardInterpretations.every((item) => item.warning));
+  assert.ok(interpretation.cardInterpretations.every((item) => item.reflectionQuestions.length >= 2));
+  assert.equal(app.includes("本地解读说明"), true);
+  assert.equal(app.includes("card-warning"), true);
+  assert.equal(app.includes("reflection-list"), true);
+});
 
 test("raven easter egg stays undisclosed until animal appears", () => {
   const index = readFileSync(join(process.cwd(), "index.html"), "utf8");

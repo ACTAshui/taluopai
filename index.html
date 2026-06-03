@@ -9,9 +9,9 @@
     />
     <title>星幕塔罗 Astral Veil Tarot</title>
     <link rel="icon" href="./assets/cards/tarot-back.webp" />
-    <link rel="stylesheet" href="./styles.css?v=20260603-public1" />
+    <link rel="stylesheet" href="./styles.css?v=20260603-ritual1" />
   </head>
-  <body>
+  <body data-topic="daily">
     <canvas id="starfield" aria-hidden="true"></canvas>
     <div id="app" class="app-shell">
       <header class="topbar">
@@ -34,13 +34,14 @@
       <main class="workspace">
         <section class="ritual-panel" aria-label="占卜设置">
           <div class="intro-copy">
-            <p class="kicker">在提问之前，先让问题安静下来。</p>
+            <p class="kicker">把问题放到桌面上，让牌慢慢回应。</p>
+            <p class="topic-oracle" id="topicOracle">今日指引会把答案收束成一个可执行的小动作。</p>
           </div>
 
           <div class="control-group">
             <div class="group-heading">
               <span>问题类型</span>
-              <small>决定解读语气</small>
+              <small>切换牌桌氛围</small>
             </div>
             <div class="segmented-grid" id="topicOptions"></div>
           </div>
@@ -58,7 +59,7 @@
           <div class="control-group">
             <div class="group-heading">
               <span>牌阵</span>
-              <small>从简单到深入</small>
+              <small>决定发牌节奏</small>
             </div>
             <div class="spread-list" id="spreadOptions"></div>
           </div>
@@ -80,7 +81,7 @@
               <span></span>
               <span></span>
             </div>
-            <div class="stage-status" id="stageStatus">选择主题和牌阵后开始洗牌。</div>
+            <div class="stage-status" id="stageStatus">选择主题和牌阵后开始洗牌，牌会依次落位。</div>
           </div>
 
           <div class="spread-board" id="spreadBoard"></div>
@@ -158,6 +159,6 @@
       <p class="api-note" id="providerNote"></p>
     </dialog>
 
-    <script type="module" src="./src/ui/app.js?v=20260603-public1"></script>
+    <script type="module" src="./src/ui/app.js?v=20260603-ritual1"></script>
   </body>
 </html>
