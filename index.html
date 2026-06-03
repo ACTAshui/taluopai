@@ -9,7 +9,7 @@
     />
     <title>星幕塔罗 Astral Veil Tarot</title>
     <link rel="icon" href="./assets/cards/tarot-back.webp" />
-    <link rel="stylesheet" href="./styles.css?v=20260603-ritual2" />
+    <link rel="stylesheet" href="./styles.css?v=20260603-ritual3" />
   </head>
   <body data-topic="daily">
     <canvas id="starfield" aria-hidden="true"></canvas>
@@ -96,6 +96,18 @@
             <div class="stage-status" id="stageStatus">请先进行洗牌</div>
           </div>
 
+          <div class="stage-magic-circle" aria-hidden="true">
+            <span class="stage-circle circle-outer"></span>
+            <span class="stage-circle circle-middle"></span>
+            <span class="stage-circle circle-inner"></span>
+            <span class="stage-rune rune-a"></span>
+            <span class="stage-rune rune-b"></span>
+            <span class="stage-rune rune-c"></span>
+            <span class="stage-falling-card falling-one"></span>
+            <span class="stage-falling-card falling-two"></span>
+            <span class="stage-falling-card falling-three"></span>
+          </div>
+
           <div class="spread-board" id="spreadBoard"></div>
           <div class="result-cue" id="resultCue" hidden aria-hidden="true">
             <div class="result-cue-sigil">
@@ -171,6 +183,6 @@
       <p class="api-note" id="providerNote"></p>
     </dialog>
 
-    <script type="module" src="./src/ui/app.js?v=20260603-ritual2"></script>
+    <script type="module" src="./src/ui/app.js?v=20260603-ritual3"></script>
   </body>
 </html>

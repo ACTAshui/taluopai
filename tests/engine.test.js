@@ -160,9 +160,15 @@ test("shuffle animation and button flow only run one ritual at a time", () => {
   assert.equal(app.includes("牌面与正逆位将由 Web Crypto 独立生成"), false);
   assert.equal(styles.includes(".deck-control"), true);
   assert.equal(index.includes('class="shuffle-ritual"'), true);
+  assert.equal(index.includes('class="stage-magic-circle"'), true);
+  assert.equal(app.includes("tableStage"), true);
+  assert.equal(app.includes('els.tableStage.classList.add("is-ritual-shuffling")'), true);
   assert.equal(styles.includes(".deck-stack.is-shuffling ~ .shuffle-ritual"), true);
+  assert.equal(styles.includes(".table-stage.is-ritual-shuffling .stage-magic-circle"), true);
   assert.equal(styles.includes("@keyframes shuffleCardFan"), true);
   assert.equal(styles.includes("@keyframes shuffleRunePulse"), true);
+  assert.equal(styles.includes("@keyframes stageMagicCircleOpen"), true);
+  assert.equal(styles.includes("@keyframes stageFallingCardDrop"), true);
   assert.equal(/animation:\s*shuffle(?:Pulse|Top|Middle|Bottom)[^;]*\s2\s*;/.test(styles), false);
   assert.equal(/function performShuffle\(\) \{\s*if \(state\.dealing\)/.test(app), true);
   assert.equal(performShuffle.includes("finally"), false);
@@ -257,7 +263,7 @@ test("result depth fields are cache-busted and cannot render undefined text", ()
   const index = readFileSync(join(process.cwd(), "index.html"), "utf8");
   const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
 
-  assert.equal(index.includes("20260603-ritual2"), true);
+  assert.equal(index.includes("20260603-ritual3"), true);
   assert.equal(app.includes('../engine/interpret.js?v=20260603-ritual2'), true);
   assert.equal(app.includes('from "../engine/interpret.js";'), false);
   assert.equal(app.includes("function depthParagraphHtml"), true);

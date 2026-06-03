@@ -77,6 +77,7 @@ const els = {
   topicOracle: document.querySelector("#topicOracle"),
   shuffleButton: document.querySelector("#shuffleButton"),
   resetButton: document.querySelector("#resetButton"),
+  tableStage: document.querySelector(".table-stage"),
   deckStack: document.querySelector("#deckStack"),
   stageStatus: document.querySelector("#stageStatus"),
   spreadBoard: document.querySelector("#spreadBoard"),
@@ -591,6 +592,7 @@ function performShuffle() {
   renderSpreadBoard();
   const theme = currentTopicTheme();
   els.stageStatus.textContent = `正在洗牌：${theme.shuffle}`;
+  els.tableStage.classList.add("is-ritual-shuffling");
   els.deckStack.classList.remove("is-shuffling");
   void els.deckStack.offsetWidth;
   els.deckStack.classList.add("is-shuffling");
@@ -607,6 +609,7 @@ function performShuffle() {
       updateDrawRecord();
       renderSpreadBoard();
       els.deckStack.classList.remove("is-shuffling");
+      els.tableStage.classList.remove("is-ritual-shuffling");
       window.setTimeout(() => {
         state.dealing = false;
         els.shuffleButton.disabled = false;
@@ -617,6 +620,7 @@ function performShuffle() {
       els.stageStatus.textContent = error.message;
       state.dealing = false;
       els.deckStack.classList.remove("is-shuffling");
+      els.tableStage.classList.remove("is-ritual-shuffling");
       els.shuffleButton.disabled = false;
     }
   }, SHUFFLE_DURATION_MS);
