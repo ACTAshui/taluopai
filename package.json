@@ -1,0 +1,12 @@
+{
+  "name": "astral-veil-tarot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:animals": "node tools/generate-animals.mjs",
+    "generate:card-prompts": "node tools/card-face-prompts.mjs",
+    "test": "node tests/engine.test.js",
+    "serve": "python -m http.server 4173"
+  }
+}

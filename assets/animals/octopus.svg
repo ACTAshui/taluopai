@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">章鱼</title>
+  <desc id="desc">A colorful celestial octopus icon for the tarot easter egg.</desc>
+  <defs>
+    <radialGradient id="bg" cx="34%" cy="26%" r="78%">
+      <stop offset="0" stop-color="hsl(260 90% 32%)"/>
+      <stop offset=".55" stop-color="hsl(172 70% 17%)"/>
+      <stop offset="1" stop-color="#080711"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="28" x2="224" y1="24" y2="230">
+      <stop offset="0" stop-color="#fff0a8"/>
+      <stop offset=".48" stop-color="hsl(46 86% 70%)"/>
+      <stop offset="1" stop-color="#a66f2e"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" values="1 0 0 0 0.9 0 1 0 0 0.55 0 0 1 0 1 0 0 0 0.55 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="34" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="100" fill="none" stroke="url(#gold)" stroke-width="2" opacity=".58"/>
+  <circle cx="128" cy="128" r="76" fill="none" stroke="url(#gold)" stroke-width="1.4" opacity=".32"/>
+  <circle cx="96" cy="136" r="3.1" fill="url(#gold)" opacity=".72"/><circle cx="75" cy="209" r="2.6" fill="url(#gold)" opacity=".72"/><circle cx="181" cy="148" r="2.1" fill="url(#gold)" opacity=".72"/><circle cx="26" cy="129" r="1.6" fill="url(#gold)" opacity=".72"/><circle cx="65" cy="131" r="3.6" fill="url(#gold)" opacity=".72"/><circle cx="201" cy="34" r="3.1" fill="url(#gold)" opacity=".72"/><circle cx="170" cy="215" r="2.6" fill="url(#gold)" opacity=".72"/><circle cx="55" cy="59" r="2.1" fill="url(#gold)" opacity=".72"/><circle cx="114" cy="142" r="1.6" fill="url(#gold)" opacity=".72"/><circle cx="44" cy="86" r="3.6" fill="url(#gold)" opacity=".72"/>
+  <g filter="url(#glow)">
+    
+    <path d="M42 132 C82 70 154 75 198 129 C165 186 80 183 42 132Z" fill="hsl(172 80% 58%)"/>
+    <path d="M196 129 l39 -32 l-7 66Z" fill="hsl(260 82% 66%)"/>
+    <path d="M104 89 C120 67 153 71 164 91 C142 86 124 87 104 89Z" fill="hsl(260 82% 66%)" opacity=".72"/>
+    <path d="M102 165 C123 186 157 180 171 160 C145 170 124 169 102 165Z" fill="hsl(260 82% 66%)" opacity=".62"/>
+    <circle cx="89" cy="122" r="7" fill="#070711"/>
+    <path d="M64 144 C91 156 132 157 166 139" fill="none" stroke="hsl(46 86% 70%)" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+  
+  </g>
+  <path d="M37 215 C86 229 170 230 219 214" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" opacity=".74"/>
+</svg>

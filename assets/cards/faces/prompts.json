@@ -1,0 +1,548 @@
+[
+  {
+    "id": "major_00_fool",
+    "nameEn": "The Fool",
+    "tone": "balanced",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Fool. Scene: a young wanderer stepping toward a luminous cliff beneath stars, white rose in hand, small white dog, mountains and dawn in the distance. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_01_magician",
+    "nameEn": "The Magician",
+    "tone": "balanced",
+    "effect": "ritual",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Magician. Scene: a focused mage at a ritual table with wand, cup, sword and pentacle symbols, one hand raised to the sky and one toward the earth. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; candlelit ceremonial glow, indigo shadows, gold focal highlights. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_02_high_priestess",
+    "nameEn": "The High Priestess",
+    "tone": "balanced",
+    "effect": "moon",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The High Priestess. Scene: a serene veiled priestess between two dark pillars, moon crown, scroll, pomegranate veil, sacred water at her feet. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; blue moonlight, misty dream atmosphere, mysterious shadows with readable detail. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_03_empress",
+    "nameEn": "The Empress",
+    "tone": "bright",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Empress. Scene: a radiant earth mother seated in a lush garden, wheat, roses, flowing river, crown of stars, warm fertility symbolism. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_04_emperor",
+    "nameEn": "The Emperor",
+    "tone": "balanced",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Emperor. Scene: a stern ruler on a stone throne with ram motifs, mountains behind, red cloak, orb and scepter, disciplined authority. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_05_hierophant",
+    "nameEn": "The Hierophant",
+    "tone": "balanced",
+    "effect": "ritual",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Hierophant. Scene: a spiritual teacher in a ceremonial temple, two acolytes, crossed keys, sacred gesture, golden altar glow. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; candlelit ceremonial glow, indigo shadows, gold focal highlights. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_06_lovers",
+    "nameEn": "The Lovers",
+    "tone": "bright",
+    "effect": "sun",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Lovers. Scene: two figures in a sacred garden beneath a winged celestial guardian, mountain and tree symbolism, choice and union. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; radiant golden daylight, warm visible highlights, luminous but not washed out. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_07_chariot",
+    "nameEn": "The Chariot",
+    "tone": "balanced",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Chariot. Scene: a victorious traveler in a starry chariot drawn by two contrasting sphinx-like guardians, city behind, armor and canopy. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_08_strength",
+    "nameEn": "Strength",
+    "tone": "balanced",
+    "effect": "sun",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Strength. Scene: a calm figure gently closing the mouth of a lion, infinity-like halo, roses, courage through tenderness. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; radiant golden daylight, warm visible highlights, luminous but not washed out. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_09_hermit",
+    "nameEn": "The Hermit",
+    "tone": "dark",
+    "effect": "star",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Hermit. Scene: an elder seeker on a snowy mountain holding a lantern with a star inside, staff, solitude and inner wisdom. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; clear starlight and silver-blue sparkle, healing glow, crisp fine details. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_10_wheel_of_fortune",
+    "nameEn": "Wheel of Fortune",
+    "tone": "balanced",
+    "effect": "orbit",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Wheel of Fortune. Scene: a great celestial wheel with symbolic creatures around it, sphinx-like guardian, serpent and alchemical motifs. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; cosmic circular motion, jewel-toned stars, balanced radiant geometry. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_11_justice",
+    "nameEn": "Justice",
+    "tone": "balanced",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Justice. Scene: a seated judge with scales and sword, balanced curtains, clear gaze, marble floor and golden symmetry. Lighting and mood: balanced indigo, obsidian and gold palette, neither too dark nor too washed out; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_12_hanged_man",
+    "nameEn": "The Hanged Man",
+    "tone": "dark",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Hanged Man. Scene: a tranquil figure suspended upside down from a living tree, glowing halo, one leg crossed, peaceful surrender. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_13_death",
+    "nameEn": "Death",
+    "tone": "dark",
+    "effect": "transform",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Death. Scene: an armored skeletal rider carrying a dark banner, white horse, sunrise beyond a river, figures witnessing transformation. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; somber dawn after darkness, black-silver transformation mood, clear silhouettes and details. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_14_temperance",
+    "nameEn": "Temperance",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Temperance. Scene: an angelic figure pouring water between two cups, one foot on land and one in water, path to distant sunlight. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_15_devil",
+    "nameEn": "The Devil",
+    "tone": "dark",
+    "effect": "shadow",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Devil. Scene: a horned shadow figure above two loosely chained people, torchlight, bat wings, temptation and bondage symbols. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; dark infernal candlelight, ruby-black shadows, high contrast without muddy areas. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_16_tower",
+    "nameEn": "The Tower",
+    "tone": "dark",
+    "effect": "lightning",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Tower. Scene: a tall tower struck by lightning under a storm sky, crown falling, figures tumbling, flames and revelation. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; storm clouds split by bright lightning, dramatic contrast, all figures and architecture still clear. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_17_star",
+    "nameEn": "The Star",
+    "tone": "bright",
+    "effect": "star",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Star. Scene: a nude or robed figure pouring water beneath a large star and seven smaller stars, calm pool and healing landscape. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; clear starlight and silver-blue sparkle, healing glow, crisp fine details. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_18_moon",
+    "nameEn": "The Moon",
+    "tone": "dark",
+    "effect": "moon",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Moon. Scene: two towers, a moonlit path, dog and wolf, crayfish emerging from water, dreamlike mist and uncertainty. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; blue moonlight, misty dream atmosphere, mysterious shadows with readable detail. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_19_sun",
+    "nameEn": "The Sun",
+    "tone": "bright",
+    "effect": "sun",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The Sun. Scene: a joyful child on a white horse, sunflowers, radiant sun, red banner, clarity and vitality. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; radiant golden daylight, warm visible highlights, luminous but not washed out. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_20_judgement",
+    "nameEn": "Judgement",
+    "tone": "bright",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Judgement. Scene: an angel sounding a trumpet above rising figures, flags, mountains, awakening and renewal. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "major_21_world",
+    "nameEn": "The World",
+    "tone": "bright",
+    "effect": "orbit",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: The World. Scene: a graceful dancer within a wreath, four symbolic guardians in the corners, completion and cosmic harmony. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cosmic circular motion, jewel-toned stars, balanced radiant geometry. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_01_ace",
+    "nameEn": "Ace of Wands",
+    "tone": "bright",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ace of Wands. Scene: a radiant hand emerging from cloud holding a sprouting wooden wand above a distant castle and fertile hills. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_02_two",
+    "nameEn": "Two of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Two of Wands. Scene: a figure on a balcony holding a globe, two tall wands, looking over sea and distant land. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_03_three",
+    "nameEn": "Three of Wands",
+    "tone": "bright",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Three of Wands. Scene: a traveler watching ships from a cliff with three wands planted nearby, golden horizon. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_04_four",
+    "nameEn": "Four of Wands",
+    "tone": "bright",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Four of Wands. Scene: four wands holding a flower garland, distant celebration, joyful homecoming in a garden courtyard. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_05_five",
+    "nameEn": "Five of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Five of Wands. Scene: five youthful figures crossing wooden staffs in energetic practice conflict, dynamic but not violent. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_06_six",
+    "nameEn": "Six of Wands",
+    "tone": "bright",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Six of Wands. Scene: a rider in procession carrying a laurel-topped wand, crowd silhouettes, victory and recognition. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_07_seven",
+    "nameEn": "Seven of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Seven of Wands. Scene: a determined figure standing on high ground defending against six rising wands below. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_08_eight",
+    "nameEn": "Eight of Wands",
+    "tone": "bright",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Eight of Wands. Scene: eight glowing wands flying swiftly across an open sky above a river landscape. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_09_nine",
+    "nameEn": "Nine of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Nine of Wands. Scene: a bandaged sentinel holding one wand before eight wands, tired but watchful. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_10_ten",
+    "nameEn": "Ten of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ten of Wands. Scene: a burdened figure carrying ten heavy wands toward a small town, effort and responsibility. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_11_page",
+    "nameEn": "Page of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Page of Wands. Scene: a young messenger studying a flowering wand in a desert landscape, curiosity and spark. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_12_knight",
+    "nameEn": "Knight of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Knight of Wands. Scene: an armored knight riding a rearing horse through a desert, flaming plume, bold momentum. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_13_queen",
+    "nameEn": "Queen of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Queen of Wands. Scene: a confident queen on a throne with sunflowers and a black cat, holding a blooming wand. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "wands_14_king",
+    "nameEn": "King of Wands",
+    "tone": "warm",
+    "effect": "fire",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: King of Wands. Scene: a commanding king on a throne with salamander and lion motifs, holding a living wand. Lighting and mood: warm amber and ember palette, energetic highlights, readable midtones; ember glow and warm movement, sparks and smoke, rich reds and golds. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_01_ace",
+    "nameEn": "Ace of Cups",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ace of Cups. Scene: a chalice overflowing with water from a cloud, dove-like spirit above, lotus pond below. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_02_two",
+    "nameEn": "Two of Cups",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Two of Cups. Scene: two figures exchanging cups under a winged lion and caduceus-like symbol, mutual union. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_03_three",
+    "nameEn": "Three of Cups",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Three of Cups. Scene: three friends raising cups in a circle, fruit harvest and joyful community. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_04_four",
+    "nameEn": "Four of Cups",
+    "tone": "cool",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Four of Cups. Scene: a contemplative figure beneath a tree, three cups before them, a fourth cup offered from a cloud. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_05_five",
+    "nameEn": "Five of Cups",
+    "tone": "dark",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Five of Cups. Scene: a cloaked figure looking at spilled cups, two upright cups behind, bridge and river in distance. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_06_six",
+    "nameEn": "Six of Cups",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Six of Cups. Scene: two children in an old garden exchanging a flower-filled cup, memory and kindness. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_07_seven",
+    "nameEn": "Seven of Cups",
+    "tone": "dark",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Seven of Cups. Scene: seven cups floating in clouds, each containing a different dreamlike symbol, illusion and choices. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_08_eight",
+    "nameEn": "Eight of Cups",
+    "tone": "dark",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Eight of Cups. Scene: a traveler leaving eight cups behind under moonlight, mountains ahead, departure for meaning. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_09_nine",
+    "nameEn": "Nine of Cups",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Nine of Cups. Scene: a satisfied figure seated before nine arranged cups, warm lanterns, emotional fulfillment. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_10_ten",
+    "nameEn": "Ten of Cups",
+    "tone": "bright",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ten of Cups. Scene: a family or chosen family beneath an arc of ten cups like a rainbow, peaceful home landscape. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_11_page",
+    "nameEn": "Page of Cups",
+    "tone": "cool",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Page of Cups. Scene: a young dreamer holding a cup with a small fish appearing from it, seaside intuition. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_12_knight",
+    "nameEn": "Knight of Cups",
+    "tone": "cool",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Knight of Cups. Scene: a graceful knight carrying a cup while riding slowly beside a river, romantic quest. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_13_queen",
+    "nameEn": "Queen of Cups",
+    "tone": "cool",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Queen of Cups. Scene: a compassionate queen by the sea holding an ornate closed cup, throne with water motifs. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "cups_14_king",
+    "nameEn": "King of Cups",
+    "tone": "cool",
+    "effect": "water",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: King of Cups. Scene: a calm king on a throne floating on turbulent water, cup and scepter, emotional mastery. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; cool reflective water light, gentle ripples and luminous mist, high clarity. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_01_ace",
+    "nameEn": "Ace of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ace of Swords. Scene: a hand from cloud holding an upright sword with crown and laurel, mountains below, clear truth. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_02_two",
+    "nameEn": "Two of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Two of Swords. Scene: a blindfolded figure seated by water crossing two swords, moonlit difficult choice. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_03_three",
+    "nameEn": "Three of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Three of Swords. Scene: a heart pierced by three swords in rain clouds, sorrow and clarity. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_04_four",
+    "nameEn": "Four of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Four of Swords. Scene: a resting figure in a chapel-like chamber, four swords, stained glass glow, recovery. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_05_five",
+    "nameEn": "Five of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Five of Swords. Scene: a figure holding swords after conflict, others walking away, windy shore, hollow victory. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_06_six",
+    "nameEn": "Six of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Six of Swords. Scene: a small boat carrying travelers across water, six swords standing in the boat, transition. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_07_seven",
+    "nameEn": "Seven of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Seven of Swords. Scene: a stealthy figure carrying five swords away from a camp while two remain behind. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_08_eight",
+    "nameEn": "Eight of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Eight of Swords. Scene: a bound blindfolded figure surrounded by eight swords, shallow water, mental restriction. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_09_nine",
+    "nameEn": "Nine of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Nine of Swords. Scene: a person sitting up in bed at night with nine swords on the wall, anxiety and wakefulness. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_10_ten",
+    "nameEn": "Ten of Swords",
+    "tone": "dark",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ten of Swords. Scene: a fallen figure under a dark sky pierced by ten swords, dawn rising beyond, painful ending. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_11_page",
+    "nameEn": "Page of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Page of Swords. Scene: a young figure holding a sword in windy hills, alert eyes and restless clouds. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_12_knight",
+    "nameEn": "Knight of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Knight of Swords. Scene: an armored knight charging on a horse through storm winds, sword forward, urgency. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_13_queen",
+    "nameEn": "Queen of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Queen of Swords. Scene: a clear-eyed queen on a throne holding an upright sword, clouds and butterflies. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "swords_14_king",
+    "nameEn": "King of Swords",
+    "tone": "cool",
+    "effect": "air",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: King of Swords. Scene: a stern king with upright sword on a carved throne, clear sky, authority of reason. Lighting and mood: cool blue-violet palette, clean contrast, readable detail in shadows; wind-swept movement, clear sky currents, crisp linework and clean silhouettes. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_01_ace",
+    "nameEn": "Ace of Pentacles",
+    "tone": "bright",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ace of Pentacles. Scene: a hand from cloud offering a golden pentacle above a garden path and archway. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_02_two",
+    "nameEn": "Two of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Two of Pentacles. Scene: a figure juggling two pentacles connected by an infinity loop, ships on wavy sea behind. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_03_three",
+    "nameEn": "Three of Pentacles",
+    "tone": "bright",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Three of Pentacles. Scene: an artisan collaborating with two patrons in a cathedral workshop, craft and skill. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_04_four",
+    "nameEn": "Four of Pentacles",
+    "tone": "dark",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Four of Pentacles. Scene: a seated figure holding one pentacle close with others under feet and above crown, guarded security. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_05_five",
+    "nameEn": "Five of Pentacles",
+    "tone": "dark",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Five of Pentacles. Scene: two travelers outside a lit stained-glass window in snow, hardship and support. Lighting and mood: overall darker and more mysterious, low-key lighting, but not blacked out; all key details remain visible; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_06_six",
+    "nameEn": "Six of Pentacles",
+    "tone": "bright",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Six of Pentacles. Scene: a generous figure weighing scales and giving coins to two people, balanced giving. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_07_seven",
+    "nameEn": "Seven of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Seven of Pentacles. Scene: a gardener leaning on a tool beside a vine of pentacles, patient assessment. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_08_eight",
+    "nameEn": "Eight of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Eight of Pentacles. Scene: a craftsperson carving pentacles at a workbench, repeated practice and mastery. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_09_nine",
+    "nameEn": "Nine of Pentacles",
+    "tone": "bright",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Nine of Pentacles. Scene: an elegant figure in a vineyard with a falcon and nine pentacles, self-sufficiency. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_10_ten",
+    "nameEn": "Ten of Pentacles",
+    "tone": "bright",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Ten of Pentacles. Scene: an ancestral courtyard with family, elder, dogs and ten pentacles woven into an arch. Lighting and mood: overall brighter and hopeful, strong illumination, every important detail easy to see; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_11_page",
+    "nameEn": "Page of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Page of Pentacles. Scene: a young student holding a pentacle carefully in a green field, learning and opportunity. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_12_knight",
+    "nameEn": "Knight of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Knight of Pentacles. Scene: a steady knight on a still horse holding a pentacle over cultivated fields. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_13_queen",
+    "nameEn": "Queen of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: Queen of Pentacles. Scene: a nurturing queen in a garden holding a pentacle, rabbit and roses near her throne. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  },
+  {
+    "id": "pentacles_14_king",
+    "nameEn": "King of Pentacles",
+    "tone": "earth",
+    "effect": "earth",
+    "prompt": "vertical 2:3 tarot card face illustration, no text, no letters, no numbers, no title banner, no caption, no logo, no watermark, original image inspired by traditional Rider-Waite-Smith tarot symbolism but not a copy or replica, ornate mystical art nouveau border with no typography, burnished gold foil details, subtle jewel-toned accents, cinematic occult-deck atmosphere, celestial geometry, symbolic composition, premium handmade deck, clear central scene, elegant handmade engraving texture, high detail. Card concept: King of Pentacles. Scene: a wealthy grounded king on a throne with vines, bulls and pentacle, stable abundance. Lighting and mood: green, bronze and soil-gold palette, textured natural light, crisp edges; green-gold garden light, tactile vines and stone textures, grounded warmth. The card face itself must contain image only; absolutely no text or symbols that look like letters or numbers. Negative prompt: text, letters, numbers, words, watermark, logo, signature, modern UI, photorealistic photograph, low detail, blurry, cropped border, duplicate card title."
+  }
+]
