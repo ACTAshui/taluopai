@@ -2,13 +2,14 @@ import { API_PROVIDERS, DEFAULT_SYSTEM_PROMPT, getProvider } from "../data/apiPr
 import { SPREADS, getSpread } from "../data/spreads.js?v=20260603-ritual1";
 import { TOPICS } from "../data/topics.js";
 import { clearApiConfig, loadApiConfig, requestAiReading, saveApiConfig } from "../engine/aiClient.js";
-import { formatReadingForShare, interpretReading } from "../engine/interpret.js";
+import { formatReadingForShare, interpretReading } from "../engine/interpret.js?v=20260603-ritual2";
 import { secureRandomInt } from "../engine/random.js";
 import { createReading, toPublicRecord } from "../engine/tarotEngine.js";
 import { ANIMAL_GALLERY } from "../data/animals.js?v=20260603-ritual1";
 import { getCardVisual } from "../data/cardVisuals.js";
 
 const READING_LOG_KEY = "astral-veil-reading-log";
+const INITIAL_STAGE_STATUS = "请先进行洗牌";
 const SHUFFLE_DURATION_MS = 1500;
 const DEAL_BASE_MS = 980;
 const DEAL_STAGGER_MS = 260;
@@ -105,6 +106,10 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function depthParagraphHtml(value) {
+  return typeof value === "string" && value.trim() ? `<p>${escapeHtml(value)}</p>` : "";
 }
 
 function showDialog(dialog) {
@@ -429,8 +434,8 @@ function renderResult() {
       <section class="synthesis-block type-synthesis">
         <h3>整盘综合</h3>
         <p>${escapeHtml(interpretation.synthesis)}</p>
-        <p>${escapeHtml(interpretation.elementFocus)}</p>
-        <p>${escapeHtml(interpretation.orientationPattern)}</p>
+        ${depthParagraphHtml(interpretation.elementFocus)}
+        ${depthParagraphHtml(interpretation.orientationPattern)}
       </section>
       <section class="synthesis-block type-actions">
         <h3>可以尝试的行动</h3>
@@ -442,7 +447,7 @@ function renderResult() {
       </section>
       <section class="synthesis-block type-local">
         <h3>本地解读说明</h3>
-        <p>${escapeHtml(interpretation.depthNote)}</p>
+        ${depthParagraphHtml(interpretation.depthNote)}
       </section>
       <div id="aiResultSlot"></div>
     </div>
@@ -624,7 +629,7 @@ function resetReading() {
   state.dealing = false;
   setResultCueVisible(false);
   els.questionInput.value = "";
-  els.stageStatus.textContent = "选择主题和牌阵后开始洗牌，牌会依次落位。";
+  els.stageStatus.textContent = INITIAL_STAGE_STATUS;
   updateDrawRecord();
   renderSpreadBoard();
   renderResult();
@@ -727,7 +732,7 @@ function runPipiLap() {
   window.clearTimeout(state.ravenClickTimer);
   window.clearTimeout(state.pipiClickTimer);
   clearAnimalGuardian();
-  const previousStatus = els.stageStatus.textContent || "选择主题和牌阵后开始洗牌，牌会依次落位。";
+  const previousStatus = els.stageStatus.textContent || INITIAL_STAGE_STATUS;
 
   const runner = document.createElement("div");
   runner.className = "pipi-runner";

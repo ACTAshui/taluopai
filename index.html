@@ -9,7 +9,7 @@
     />
     <title>星幕塔罗 Astral Veil Tarot</title>
     <link rel="icon" href="./assets/cards/tarot-back.webp" />
-    <link rel="stylesheet" href="./styles.css?v=20260603-ritual1" />
+    <link rel="stylesheet" href="./styles.css?v=20260603-ritual2" />
   </head>
   <body data-topic="daily">
     <canvas id="starfield" aria-hidden="true"></canvas>
@@ -65,10 +65,6 @@
           </div>
 
           <div class="ritual-actions">
-            <button class="primary-button" id="shuffleButton" type="button">
-              <span class="button-sigil" aria-hidden="true"></span>
-              开始洗牌
-            </button>
             <button class="ghost-button" id="resetButton" type="button">清空重来</button>
           </div>
 
@@ -76,12 +72,28 @@
 
         <section class="table-stage" aria-label="塔罗牌桌">
           <div class="deck-zone">
-            <div class="deck-stack" id="deckStack" aria-hidden="true">
-              <img src="./assets/cards/tarot-back.webp" alt="" />
-              <span></span>
-              <span></span>
+            <div class="deck-control">
+              <div class="deck-stack" id="deckStack" aria-hidden="true">
+                <img src="./assets/cards/tarot-back.webp" alt="" />
+                <span></span>
+                <span></span>
+              </div>
+              <div class="shuffle-ritual" aria-hidden="true">
+                <span class="shuffle-ring ring-one"></span>
+                <span class="shuffle-ring ring-two"></span>
+                <span class="shuffle-spark spark-a"></span>
+                <span class="shuffle-spark spark-b"></span>
+                <span class="shuffle-spark spark-c"></span>
+                <span class="shuffle-card card-a"></span>
+                <span class="shuffle-card card-b"></span>
+                <span class="shuffle-card card-c"></span>
+              </div>
+              <button class="primary-button deck-shuffle-button" id="shuffleButton" type="button">
+                <span class="button-sigil" aria-hidden="true"></span>
+                开始洗牌
+              </button>
             </div>
-            <div class="stage-status" id="stageStatus">选择主题和牌阵后开始洗牌，牌会依次落位。</div>
+            <div class="stage-status" id="stageStatus">请先进行洗牌</div>
           </div>
 
           <div class="spread-board" id="spreadBoard"></div>
@@ -159,6 +171,6 @@
       <p class="api-note" id="providerNote"></p>
     </dialog>
 
-    <script type="module" src="./src/ui/app.js?v=20260603-ritual1"></script>
+    <script type="module" src="./src/ui/app.js?v=20260603-ritual2"></script>
   </body>
 </html>

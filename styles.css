@@ -714,20 +714,152 @@ select:focus {
 
 .deck-zone {
   display: grid;
-  grid-template-columns: 118px 1fr;
-  gap: 18px;
+  grid-template-columns: 154px 1fr;
+  gap: 24px;
   align-items: center;
   min-height: 156px;
   padding-bottom: 22px;
   border-bottom: 1px solid var(--line-soft);
 }
 
+.deck-control {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  min-width: 138px;
+}
+
 .deck-stack {
   position: relative;
+  z-index: 2;
   width: 104px;
   aspect-ratio: 2 / 3;
   filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.45));
   transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.deck-shuffle-button {
+  position: relative;
+  z-index: 3;
+  width: min(150px, 100%);
+  min-height: 46px;
+  box-shadow:
+    0 12px 40px rgba(215, 180, 106, 0.24),
+    0 0 28px var(--topic-shadow);
+}
+
+.shuffle-ritual {
+  position: absolute;
+  z-index: 1;
+  top: -28px;
+  left: 50%;
+  width: 172px;
+  height: 224px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.84);
+}
+
+.shuffle-ring,
+.shuffle-spark,
+.shuffle-card {
+  position: absolute;
+  pointer-events: none;
+}
+
+.shuffle-ring {
+  inset: 18px 8px auto;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--topic-accent) 44%, transparent);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 24px color-mix(in srgb, var(--topic-accent) 10%, transparent),
+    0 0 30px var(--topic-shadow);
+  transform: scaleX(0.72) rotate(18deg);
+}
+
+.shuffle-ring.ring-two {
+  inset: 4px -4px auto;
+  border-color: color-mix(in srgb, var(--topic-secondary) 32%, transparent);
+  transform: scaleX(0.58) rotate(-34deg);
+}
+
+.shuffle-spark {
+  width: 7px;
+  height: 7px;
+  background: var(--topic-accent);
+  border-radius: 50%;
+  box-shadow:
+    0 0 12px var(--topic-accent),
+    0 0 28px var(--topic-shadow);
+  opacity: 0;
+}
+
+.shuffle-spark.spark-a {
+  top: 18px;
+  left: 25px;
+}
+
+.shuffle-spark.spark-b {
+  top: 92px;
+  right: 2px;
+}
+
+.shuffle-spark.spark-c {
+  bottom: 54px;
+  left: 6px;
+}
+
+.shuffle-card {
+  top: 42px;
+  left: 50%;
+  width: 46px;
+  aspect-ratio: 2 / 3;
+  border: 1px solid color-mix(in srgb, var(--topic-accent) 52%, transparent);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 34%, color-mix(in srgb, var(--topic-accent) 28%, transparent), transparent 40%),
+    linear-gradient(160deg, rgba(11, 9, 20, 0.86), rgba(242, 211, 139, 0.08));
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.36), 0 0 18px var(--topic-shadow);
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual {
+  animation: shuffleRitualWake 1500ms cubic-bezier(0.16, 0.88, 0.3, 1.08) forwards;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .shuffle-ring.ring-one {
+  animation: shuffleRunePulse 1500ms linear forwards;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .shuffle-ring.ring-two {
+  animation: shuffleRuneCounterPulse 1500ms linear forwards;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .shuffle-spark {
+  animation: shuffleSparkLeap 1500ms ease-out forwards;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .spark-b {
+  animation-delay: 110ms;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .spark-c {
+  animation-delay: 190ms;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .shuffle-card {
+  animation: shuffleCardFan 1500ms cubic-bezier(0.16, 0.88, 0.3, 1.08) forwards;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .card-b {
+  animation-delay: 80ms;
+}
+
+.deck-stack.is-shuffling ~ .shuffle-ritual .card-c {
+  animation-delay: 150ms;
 }
 
 .deck-stack::before {
@@ -2110,6 +2242,94 @@ select:focus {
   }
 }
 
+@keyframes shuffleRitualWake {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.72) rotate(-8deg);
+  }
+  18% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1.05) rotate(4deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.18) rotate(12deg);
+  }
+}
+
+@keyframes shuffleRunePulse {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.72) scale(0.72) rotate(18deg);
+  }
+  28% {
+    opacity: 0.92;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0.72) scale(1.24) rotate(286deg);
+  }
+}
+
+@keyframes shuffleRuneCounterPulse {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.58) scale(0.68) rotate(-34deg);
+  }
+  32% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0.58) scale(1.2) rotate(-304deg);
+  }
+}
+
+@keyframes shuffleSparkLeap {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5);
+  }
+  28% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.74;
+    transform: translate(18px, -16px) scale(1.28);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -34px) scale(0.3);
+  }
+}
+
+@keyframes shuffleCardFan {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(18px) rotate(0deg) scale(0.62);
+  }
+  20% {
+    opacity: 0.72;
+  }
+  38% {
+    transform: translateX(calc(-50% - 62px)) translateY(-12px) rotate(-28deg) scale(0.9);
+  }
+  62% {
+    transform: translateX(calc(-50% + 64px)) translateY(4px) rotate(26deg) scale(0.92);
+  }
+  82% {
+    opacity: 0.62;
+    transform: translateX(-50%) translateY(-20px) rotate(4deg) scale(0.82);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-44px) rotate(0deg) scale(0.54);
+  }
+}
+
 @keyframes tableConstellationDrift {
   0%,
   100% {
@@ -2520,11 +2740,23 @@ select:focus {
   }
 
   .deck-zone {
-    grid-template-columns: 82px 1fr;
+    grid-template-columns: 116px 1fr;
+    gap: 14px;
   }
 
   .deck-stack {
     width: 76px;
+  }
+
+  .deck-shuffle-button {
+    width: 108px;
+    min-height: 42px;
+    padding: 0 12px;
+  }
+
+  .shuffle-ritual {
+    width: 138px;
+    height: 184px;
   }
 
   .spread-board {

@@ -145,12 +145,24 @@ test("API panel copy is local-only without public-key warning language", () => {
 });
 
 test("shuffle animation and button flow only run one ritual at a time", () => {
+  const index = readFileSync(join(process.cwd(), "index.html"), "utf8");
   const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
   const styles = readFileSync(join(process.cwd(), "styles.css"), "utf8");
   const performShuffle = app.match(/function performShuffle\(\) \{[\s\S]*?\n\}/)?.[0] || "";
 
+  const ritualActions = index.match(/<div class="ritual-actions">[\s\S]*?<\/div>/)?.[0] || "";
+  assert.equal(index.includes('class="deck-control"'), true);
+  assert.equal(index.includes('class="primary-button deck-shuffle-button" id="shuffleButton"'), true);
+  assert.equal(ritualActions.includes('id="shuffleButton"'), false);
+  assert.equal(app.includes('const INITIAL_STAGE_STATUS = "请先进行洗牌";'), true);
+  assert.equal(index.includes('id="stageStatus">请先进行洗牌</div>'), true);
   assert.equal(app.includes("正在洗牌："), true);
   assert.equal(app.includes("牌面与正逆位将由 Web Crypto 独立生成"), false);
+  assert.equal(styles.includes(".deck-control"), true);
+  assert.equal(index.includes('class="shuffle-ritual"'), true);
+  assert.equal(styles.includes(".deck-stack.is-shuffling ~ .shuffle-ritual"), true);
+  assert.equal(styles.includes("@keyframes shuffleCardFan"), true);
+  assert.equal(styles.includes("@keyframes shuffleRunePulse"), true);
   assert.equal(/animation:\s*shuffle(?:Pulse|Top|Middle|Bottom)[^;]*\s2\s*;/.test(styles), false);
   assert.equal(/function performShuffle\(\) \{\s*if \(state\.dealing\)/.test(app), true);
   assert.equal(performShuffle.includes("finally"), false);
@@ -239,6 +251,19 @@ test("local-only result has enough depth without API", () => {
   assert.equal(app.includes("本地解读说明"), true);
   assert.equal(app.includes("card-warning"), true);
   assert.equal(app.includes("reflection-list"), true);
+});
+
+test("result depth fields are cache-busted and cannot render undefined text", () => {
+  const index = readFileSync(join(process.cwd(), "index.html"), "utf8");
+  const app = readFileSync(join(process.cwd(), "src", "ui", "app.js"), "utf8");
+
+  assert.equal(index.includes("20260603-ritual2"), true);
+  assert.equal(app.includes('../engine/interpret.js?v=20260603-ritual2'), true);
+  assert.equal(app.includes('from "../engine/interpret.js";'), false);
+  assert.equal(app.includes("function depthParagraphHtml"), true);
+  assert.equal(app.includes("${escapeHtml(interpretation.elementFocus)}</p>"), false);
+  assert.equal(app.includes("${escapeHtml(interpretation.orientationPattern)}</p>"), false);
+  assert.equal(app.includes("${escapeHtml(interpretation.depthNote)}</p>"), false);
 });
 
 test("raven easter egg stays undisclosed until animal appears", () => {
