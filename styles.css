@@ -231,6 +231,13 @@ h1 {
   margin-left: auto;
 }
 
+.page-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .raven-button {
   position: relative;
   display: grid;

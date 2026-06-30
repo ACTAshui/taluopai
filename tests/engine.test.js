@@ -7,6 +7,12 @@ import { SPREADS } from "../src/data/spreads.js";
 import { secureRandomInt, shuffleDeck } from "../src/engine/random.js";
 import { interpretReading } from "../src/engine/interpret.js";
 import { createReading, toPublicRecord } from "../src/engine/tarotEngine.js";
+import {
+  createCoinReading,
+  createMeihuaReading,
+  createXiaoLiuRenReading,
+  formatZhouyiForShare
+} from "../src/engine/zhouyiEngine.js";
 
 function fakeRng(sequence) {
   let index = 0;
@@ -296,6 +302,104 @@ test("personal Pipi easter egg asset exists", () => {
   const imagePath = join(process.cwd(), "assets", "animals", "pipi-codex-dog.png");
   assert.equal(statSync(imagePath).isFile(), true);
   assert.deepEqual([...readFileSync(imagePath).subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+});
+
+test("zhouyi coin engine supports manual six-yao copper coin input", () => {
+  const reading = createCoinReading({
+    question: "此事宜进还是宜守？",
+    manualLines: Array.from({ length: 6 }, () => ["back", "back", "back"])
+  });
+
+  assert.equal(reading.source, "manual-coins");
+  assert.equal(reading.hexagram.name, "乾");
+  assert.equal(reading.changedHexagram.name, "坤");
+  assert.equal(reading.lines.every((line) => line.total === 9 && line.moving), true);
+  assert.equal(reading.interpretation.sections.some((section) => section.body.includes("先看") && section.body.includes("细看")), true);
+  assert.equal(
+    reading.interpretation.sections.every((section) => section.lead?.length >= 28 && section.detail?.length >= 72),
+    true
+  );
+  assert.equal(formatZhouyiForShare(reading).includes("玄衡易台 / 六爻铜钱"), true);
+});
+
+test("xiao liu ren and mei hua yi shu return deterministic local readings", () => {
+  const liuRen = createXiaoLiuRenReading({
+    lunarMonth: 1,
+    lunarDay: 1,
+    hourBranch: "zi"
+  });
+  assert.equal(liuRen.palace.name, "大安");
+  assert.equal(liuRen.formula, "(1-1 + 1-1 + 1-1) mod 6 = 1");
+  assert.equal(liuRen.interpretation.sections.every((section) => section.body.includes("先")), true);
+  assert.equal(
+    liuRen.interpretation.sections.every((section) => section.lead?.length >= 24 && section.detail?.length >= 60),
+    true
+  );
+
+  const meiHua = createMeihuaReading({
+    upperNumber: 1,
+    lowerNumber: 8,
+    movingNumber: 6
+  });
+  assert.equal(meiHua.hexagram.name, "否");
+  assert.equal(meiHua.changedHexagram.name, "萃");
+  assert.equal(meiHua.moving.label, "上爻动");
+  assert.equal(meiHua.interpretation.sections.some((section) => section.body.includes("先看") && section.body.includes("细看")), true);
+  assert.equal(
+    meiHua.interpretation.sections.every((section) => section.lead?.length >= 24 && section.detail?.length >= 60),
+    true
+  );
+});
+
+test("zhouyi random coin switch triggers a fresh cast", () => {
+  const app = readFileSync(join(process.cwd(), "src", "ui", "zhouyiApp.js"), "utf8");
+  const switchHandler = app.match(/els\.methodControls\.addEventListener\("click"[\s\S]*?els\.castButton\.addEventListener/)?.[0] || "";
+
+  assert.match(switchHandler, /key === "coinMode"[\s\S]*switchButton\.dataset\.value === "auto"[\s\S]*performReading\(\)/);
+});
+
+test("xiao liu ren current-time mode is stable for the same date", () => {
+  const date = new Date("2026-07-01T10:30:00+08:00");
+  const first = createXiaoLiuRenReading({ date, rng: fakeRng([1, 2, 3]) });
+  const second = createXiaoLiuRenReading({ date, rng: fakeRng([99, 101, 103]) });
+
+  assert.equal(first.source, "local-date-time");
+  assert.equal(second.source, "local-date-time");
+  assert.equal(first.month, second.month);
+  assert.equal(first.day, second.day);
+  assert.equal(first.hour.branch, second.hour.branch);
+  assert.equal(first.palace.name, second.palace.name);
+});
+
+test("zhouyi static page is GitHub Pages friendly and uses generated visual asset", () => {
+  const page = readFileSync(join(process.cwd(), "zhouyi.html"), "utf8");
+  const styles = readFileSync(join(process.cwd(), "styles-zhouyi.css"), "utf8");
+  const app = readFileSync(join(process.cwd(), "src", "ui", "zhouyiApp.js"), "utf8");
+  const index = readFileSync(join(process.cwd(), "index.html"), "utf8");
+  const imagePath = join(process.cwd(), "assets", "zhouyi", "lacquer-bagua-table.png");
+  const coinPath = join(process.cwd(), "assets", "zhouyi", "bronze-cash-coin.webp");
+
+  assert.equal(page.includes("玄衡易台"), true);
+  assert.equal(page.includes("./src/ui/zhouyiApp.js?v=20260701-rich1"), true);
+  assert.equal(page.includes("./styles-zhouyi.css?v=20260701-rich1"), true);
+  assert.equal(styles.includes("./assets/zhouyi/lacquer-bagua-table.png"), true);
+  assert.equal(styles.includes("./assets/zhouyi/bronze-cash-coin.webp"), true);
+  assert.equal(styles.includes("@keyframes coinCastA"), true);
+  assert.equal(app.includes("function triggerCastingMotion"), true);
+  assert.equal(app.includes("function readingOriginLabel"), true);
+  assert.equal(app.includes("function renderAnswerSection"), true);
+  assert.equal(app.includes("${escapeHtml(reading.methodName)} · ${escapeHtml(reading.algorithm)}"), false);
+  assert.equal(app.includes("Web Crypto 取农历月、日、时"), false);
+  assert.equal(app.includes("当前时间"), true);
+  assert.equal(app.includes("跨入新时辰后才会变化"), true);
+  assert.equal(app.includes("requestZhouyiAiReading"), true);
+  assert.equal(page.includes("本次记录"), false);
+  assert.equal(page.includes('class="record-panel" hidden'), true);
+  assert.equal(page.includes("补写设置"), true);
+  assert.equal(page.includes("AI 设置"), false);
+  assert.equal(index.includes("./zhouyi.html"), true);
+  assert.deepEqual([...readFileSync(imagePath).subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+  assert.equal(readFileSync(coinPath).subarray(0, 4).toString("ascii"), "RIFF");
 });
 
 console.log("All engine checks passed.");
