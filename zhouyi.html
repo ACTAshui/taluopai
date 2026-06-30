@@ -9,7 +9,7 @@
     />
     <title>玄衡易台 Zhouyi Divination</title>
     <link rel="icon" href="./assets/zhouyi/lacquer-bagua-table.png" />
-    <link rel="stylesheet" href="./styles-zhouyi.css?v=20260701-rich1" />
+    <link rel="stylesheet" href="./styles-zhouyi.css?v=20260701-assistant1" />
   </head>
   <body data-method="liuyao">
     <div class="page-backdrop" aria-hidden="true"></div>
@@ -44,13 +44,7 @@
 
           <div id="methodControls"></div>
 
-          <div class="action-row">
-            <button class="primary-button" id="castButton" type="button">
-              <span aria-hidden="true"></span>
-              起课
-            </button>
-            <button class="ghost-button" id="clearButton" type="button">清空</button>
-          </div>
+          <div class="action-row" id="actionRow"></div>
           <p class="status-line" id="statusLine" data-tone="neutral">请选择法门并起课。</p>
         </aside>
 
@@ -77,8 +71,8 @@
       <form method="dialog">
         <button class="modal-close" type="submit" aria-label="关闭">×</button>
       </form>
-      <h2>补充解读设置</h2>
-      <p>默认关闭。启用后只根据本次起课记录补充文字，配置保存在当前浏览器。</p>
+      <h2>周易起课解读助手</h2>
+      <p>默认关闭。启用后只根据本次卦象、动爻、六宫或体用关系补充文字；配置保存在当前浏览器。</p>
       <div class="api-grid">
         <label>
           <span>供应商</span>
@@ -100,11 +94,11 @@
           <span>状态</span>
           <select id="apiEnabledSelect">
             <option value="off">关闭</option>
-            <option value="on">启用补充解读</option>
+            <option value="on">启用周易补充解读</option>
           </select>
         </label>
         <label class="wide-field">
-          <span>系统提示</span>
+          <span>卦象提示词</span>
           <textarea id="apiPromptInput" rows="5"></textarea>
         </label>
       </div>
@@ -115,6 +109,6 @@
       <p class="api-note" id="providerNote"></p>
     </dialog>
 
-    <script type="module" src="./src/ui/zhouyiApp.js?v=20260701-rich1"></script>
+    <script type="module" src="./src/ui/zhouyiApp.js?v=20260701-assistant1"></script>
   </body>
 </html>

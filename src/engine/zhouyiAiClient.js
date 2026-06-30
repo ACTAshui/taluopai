@@ -2,7 +2,7 @@ import { getProvider } from "../data/apiProviders.js";
 import { formatZhouyiForShare } from "./zhouyiEngine.js";
 
 export const DEFAULT_ZHOUYI_PROMPT =
-  "你是一位克制、清晰、尊重现实边界的周易解读助手。基于用户给出的本地起课结果补充中文解读。不要制造绝对预言，不要给医疗、法律、投资等高风险结论；要把象意转成可验证、可执行的提醒。";
+  "你是一位周易起课解读助手，语气沉稳、明白、尊重现实边界。你只基于用户给出的本地起课结果补充说明。请围绕本卦、之卦、动爻、小六壬六宫、梅花体用、取数依据和现实可验证动作来写，不要使用塔罗、抽牌、牌面、正逆位等术语。不要制造绝对预言，不要给医疗、法律、投资等高风险结论；要把象意转成可观察、可复核、可执行的提醒。";
 
 function parseOpenAiStyle(data) {
   return data?.choices?.[0]?.message?.content || data?.choices?.[0]?.text || "";
@@ -20,7 +20,7 @@ function buildPrompt(reading) {
   return [
     formatZhouyiForShare(reading),
     "",
-    "请补充一段 300 字以内的中文解读，分成：局势、提醒、下一步。语气要清醒、温和、具体。"
+    "请补充一段 300 字以内的中文周易解读，分成：卦象局势、需要留意、下一步。语气要清醒、温和、具体，术语要准确，结论要可被现实验证。"
   ].join("\n");
 }
 
@@ -29,7 +29,7 @@ export async function requestZhouyiAiReading({ config, reading }) {
   const apiKey = config.apiKey?.trim();
 
   if (!apiKey) {
-    throw new Error("请先在隐藏面板中填写 API key。");
+    throw new Error("请先在周易起课解读助手设置中填写 API key。");
   }
 
   const systemPrompt = config.systemPrompt?.trim() || DEFAULT_ZHOUYI_PROMPT;

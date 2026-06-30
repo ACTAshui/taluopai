@@ -139,8 +139,19 @@ test("public UI omits helper prompt copy called out in review", () => {
 test("API panel copy is local-only without public-key warning language", () => {
   const index = readFileSync(join(process.cwd(), "index.html"), "utf8");
   const providers = readFileSync(join(process.cwd(), "src", "data", "apiProviders.js"), "utf8");
+  const zhouyiPage = readFileSync(join(process.cwd(), "zhouyi.html"), "utf8");
+  const zhouyiAi = readFileSync(join(process.cwd(), "src", "engine", "zhouyiAiClient.js"), "utf8");
+  const zhouyiApp = readFileSync(join(process.cwd(), "src", "ui", "zhouyiApp.js"), "utf8");
 
   assert.equal(index.includes("仅用于本机使用，不会公开"), true);
+  assert.equal(index.includes("塔罗牌阵解读助手"), true);
+  assert.equal(index.includes("牌阵提示词"), true);
+  assert.equal(zhouyiPage.includes("周易起课解读助手"), true);
+  assert.equal(zhouyiPage.includes("卦象提示词"), true);
+  assert.equal(providers.includes("塔罗牌阵"), true);
+  assert.equal(zhouyiAi.includes("周易起课"), true);
+  assert.equal(zhouyiAi.includes("牌阵"), false);
+  assert.equal(zhouyiApp.includes("ZHOUYI_API_CONFIG_KEY"), true);
   assert.equal(index.includes("公开网页中直接使用 API key 有暴露风险"), false);
   assert.equal(index.includes("后端代理"), false);
   assert.equal((providers.match(/note: "仅用于本机使用，不会公开。"/g) || []).length, 8);
@@ -353,9 +364,21 @@ test("xiao liu ren and mei hua yi shu return deterministic local readings", () =
 
 test("zhouyi random coin switch triggers a fresh cast", () => {
   const app = readFileSync(join(process.cwd(), "src", "ui", "zhouyiApp.js"), "utf8");
-  const switchHandler = app.match(/els\.methodControls\.addEventListener\("click"[\s\S]*?els\.castButton\.addEventListener/)?.[0] || "";
+  const switchHandler =
+    app.match(/els\.methodControls\.addEventListener\("click"[\s\S]*?els\.actionRow\.addEventListener/)?.[0] || "";
 
   assert.match(switchHandler, /key === "coinMode"[\s\S]*switchButton\.dataset\.value === "auto"[\s\S]*performReading\(\)/);
+});
+
+test("zhouyi random coin mode uses random button as the only cast trigger", () => {
+  const page = readFileSync(join(process.cwd(), "zhouyi.html"), "utf8");
+  const app = readFileSync(join(process.cwd(), "src", "ui", "zhouyiApp.js"), "utf8");
+
+  assert.equal(page.includes('id="actionRow"'), true);
+  assert.equal(page.includes('id="castButton"'), false);
+  assert.equal(app.includes("function renderActionRow"), true);
+  assert.match(app, /state\.methodId === "liuyao" && state\.coinMode === "auto"[\s\S]*clearButton[\s\S]*清空/);
+  assert.match(app, /id="castButton"[\s\S]*起课/);
 });
 
 test("xiao liu ren current-time mode is stable for the same date", () => {
@@ -380,8 +403,8 @@ test("zhouyi static page is GitHub Pages friendly and uses generated visual asse
   const coinPath = join(process.cwd(), "assets", "zhouyi", "bronze-cash-coin.webp");
 
   assert.equal(page.includes("玄衡易台"), true);
-  assert.equal(page.includes("./src/ui/zhouyiApp.js?v=20260701-rich1"), true);
-  assert.equal(page.includes("./styles-zhouyi.css?v=20260701-rich1"), true);
+  assert.equal(page.includes("./src/ui/zhouyiApp.js?v=20260701-assistant1"), true);
+  assert.equal(page.includes("./styles-zhouyi.css?v=20260701-assistant1"), true);
   assert.equal(styles.includes("./assets/zhouyi/lacquer-bagua-table.png"), true);
   assert.equal(styles.includes("./assets/zhouyi/bronze-cash-coin.webp"), true);
   assert.equal(styles.includes("@keyframes coinCastA"), true);

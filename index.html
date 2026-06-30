@@ -144,9 +144,9 @@
       <form method="dialog">
         <button class="modal-close" type="submit" aria-label="关闭">×</button>
       </form>
-      <h2>隐藏 AI 接口</h2>
+      <h2>塔罗牌阵解读助手</h2>
       <p class="warning-copy">
-        默认不会启用。仅用于本机使用，不会公开。
+        默认不会启用。开启后只根据本次牌阵、牌位、正逆位和本地解读补充文字；配置仅用于本机使用，不会公开。
       </p>
       <div class="api-grid">
         <label>
@@ -169,11 +169,11 @@
           <span>调用状态</span>
           <select id="apiEnabledSelect">
             <option value="off">关闭</option>
-            <option value="on">启用 AI 补充解读</option>
+            <option value="on">启用牌阵补充解读</option>
           </select>
         </label>
         <label class="wide-field">
-          <span>系统提示词</span>
+          <span>牌阵提示词</span>
           <textarea id="apiPromptInput" rows="4"></textarea>
         </label>
       </div>
@@ -184,6 +184,6 @@
       <p class="api-note" id="providerNote"></p>
     </dialog>
 
-    <script type="module" src="./src/ui/app.js?v=20260603-ritual3"></script>
+    <script type="module" src="./src/ui/app.js?v=20260701-assistant1"></script>
   </body>
 </html>

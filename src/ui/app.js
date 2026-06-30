@@ -1,4 +1,4 @@
-import { API_PROVIDERS, DEFAULT_SYSTEM_PROMPT, getProvider } from "../data/apiProviders.js";
+import { API_PROVIDERS, DEFAULT_SYSTEM_PROMPT, getProvider } from "../data/apiProviders.js?v=20260701-assistant1";
 import { SPREADS, getSpread } from "../data/spreads.js?v=20260603-ritual1";
 import { TOPICS } from "../data/topics.js";
 import { clearApiConfig, loadApiConfig, requestAiReading, saveApiConfig } from "../engine/aiClient.js";

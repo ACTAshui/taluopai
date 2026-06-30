@@ -1,7 +1,6 @@
 import { API_PROVIDERS, getProvider } from "../data/apiProviders.js";
 import { COIN_SIDES, EARTHLY_HOURS, METHOD_DEFS } from "../data/zhouyi.js";
-import { clearApiConfig, loadApiConfig, saveApiConfig } from "../engine/aiClient.js";
-import { DEFAULT_ZHOUYI_PROMPT, requestZhouyiAiReading } from "../engine/zhouyiAiClient.js";
+import { DEFAULT_ZHOUYI_PROMPT, requestZhouyiAiReading } from "../engine/zhouyiAiClient.js?v=20260701-assistant1";
 import {
   createCoinReading,
   createMeihuaReading,
@@ -10,8 +9,9 @@ import {
   toZhouyiRecord
 } from "../engine/zhouyiEngine.js";
 
-const VERSION = "20260701-rich1";
+const VERSION = "20260701-assistant1";
 const ZHOUYI_LOG_KEY = "astral-veil-zhouyi-log";
+const ZHOUYI_API_CONFIG_KEY = "astral-veil-zhouyi-api-config";
 
 const state = {
   methodId: "liuyao",
@@ -27,8 +27,7 @@ const els = {
   methodTabs: document.querySelector("#methodTabs"),
   questionInput: document.querySelector("#questionInput"),
   methodControls: document.querySelector("#methodControls"),
-  castButton: document.querySelector("#castButton"),
-  clearButton: document.querySelector("#clearButton"),
+  actionRow: document.querySelector("#actionRow"),
   copyButton: document.querySelector("#copyButton"),
   saveButton: document.querySelector("#saveButton"),
   aiButton: document.querySelector("#aiButton"),
@@ -69,6 +68,23 @@ function showDialog(dialog) {
   } else {
     dialog.setAttribute("open", "");
   }
+}
+
+function loadZhouyiApiConfig() {
+  try {
+    const raw = localStorage.getItem(ZHOUYI_API_CONFIG_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveZhouyiApiConfig(config) {
+  localStorage.setItem(ZHOUYI_API_CONFIG_KEY, JSON.stringify(config));
+}
+
+function clearZhouyiApiConfig() {
+  localStorage.removeItem(ZHOUYI_API_CONFIG_KEY);
 }
 
 function currentQuestion() {
@@ -253,6 +269,20 @@ function renderMethodControls() {
   } else {
     els.methodControls.innerHTML = renderCoinControls();
   }
+  renderActionRow();
+}
+
+function renderActionRow() {
+  const randomCoinMode = state.methodId === "liuyao" && state.coinMode === "auto";
+  els.actionRow.innerHTML = randomCoinMode
+    ? `<button class="ghost-button clear-only" id="clearButton" type="button">清空</button>`
+    : `
+        <button class="primary-button" id="castButton" type="button">
+          <span aria-hidden="true"></span>
+          起课
+        </button>
+        <button class="ghost-button" id="clearButton" type="button">清空</button>
+      `;
 }
 
 function lineHtml(line, index) {
@@ -503,7 +533,7 @@ async function enhanceWithAi() {
   if (!state.reading) {
     return;
   }
-  const config = loadApiConfig();
+  const config = loadZhouyiApiConfig();
   if (config?.enabled !== "on") {
     showDialog(els.apiDialog);
     setStatus("请先在补写设置中启用。", "warn");
@@ -539,7 +569,7 @@ function populateApiPanel() {
     (provider) => `<option value="${provider.id}">${escapeHtml(provider.label)}</option>`
   ).join("");
 
-  const saved = loadApiConfig();
+  const saved = loadZhouyiApiConfig();
   const provider = getProvider(saved?.providerId);
   els.providerSelect.value = saved?.providerId || provider.id;
   els.apiModelInput.value = saved?.model || provider.model;
@@ -551,7 +581,7 @@ function populateApiPanel() {
 }
 
 function saveApiPanel() {
-  saveApiConfig({
+  saveZhouyiApiConfig({
     providerId: els.providerSelect.value,
     model: els.apiModelInput.value.trim(),
     endpoint: els.apiEndpointInput.value.trim(),
@@ -605,8 +635,15 @@ function bindEvents() {
     }
   });
 
-  els.castButton.addEventListener("click", performReading);
-  els.clearButton.addEventListener("click", resetPage);
+  els.actionRow.addEventListener("click", (event) => {
+    if (event.target.closest("#castButton")) {
+      performReading();
+      return;
+    }
+    if (event.target.closest("#clearButton")) {
+      resetPage();
+    }
+  });
   els.copyButton.addEventListener("click", copyResult);
   els.saveButton.addEventListener("click", saveReading);
   els.aiButton.addEventListener("click", enhanceWithAi);
@@ -622,7 +659,7 @@ function bindEvents() {
   });
   els.saveApiConfig.addEventListener("click", saveApiPanel);
   els.clearApiConfig.addEventListener("click", () => {
-    clearApiConfig();
+    clearZhouyiApiConfig();
     populateApiPanel();
     setStatus("补写设置已清除。");
   });
